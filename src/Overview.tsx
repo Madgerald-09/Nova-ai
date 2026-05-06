@@ -1,4 +1,5 @@
 import { useApp } from "@/state/AppContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { TopNav } from "@/components/TopNav";
 import { RoleSidebar } from "@/components/RoleSidebar";
 import { NotificationPanel } from "@/components/NotificationPanel";
@@ -21,7 +22,14 @@ import { TeamChatView } from "@/sections/TeamChatView";
 
 export default function Overview() {
   const { state } = useApp();
+  const isMobile = useIsMobile();
   const { userRole, activeTab } = state;
+
+  // Calculate margin based on mobile and sidebar state
+  const getMarginLeft = () => {
+    if (isMobile) return "ml-0";
+    return state.sidebarCollapsed ? "ml-16" : "ml-60";
+  };
 
   const renderContent = () => {
     // Builder routes
@@ -93,7 +101,7 @@ export default function Overview() {
     <div className="min-h-screen bg-black text-[#f9fafb] flex">
       <RoleSidebar />
       <div
-        className={`flex-1 flex flex-col transition-all duration-300 ${state.sidebarCollapsed ? "ml-16" : "ml-60"}`}
+        className={`flex-1 flex flex-col transition-all duration-300 ${getMarginLeft()}`}
       >
         <TopNav />
         <main className="flex-1 overflow-auto pt-16">{renderContent()}</main>
