@@ -157,6 +157,8 @@ export function ProfileEditModal() {
           <button
             onClick={() => dispatch({ type: "TOGGLE_PROFILE_EDIT" })}
             className="p-1.5 rounded-md hover:bg-[#111827] transition-colors"
+            aria-label="Close profile editor"
+            title="Close"
           >
             <X className="w-4 h-4 text-[#9ca3af]" />
           </button>
@@ -201,6 +203,7 @@ export function ProfileEditModal() {
                 className="hidden"
                 accept="image/png, image/jpeg, image/webp"
                 onChange={handleAvatarUpload}
+                aria-label="Upload profile picture"
               />
             </div>
           </div>
@@ -416,6 +419,8 @@ export function ProfileEditModal() {
                       <button
                         onClick={() => removeLink(i)}
                         className="p-1 rounded hover:bg-[#111827] transition-colors"
+                        aria-label={`Remove portfolio link: ${link}`}
+                        title="Remove link"
                       >
                         <Trash2 className="w-3 h-3 text-[#6b7280]" />
                       </button>
