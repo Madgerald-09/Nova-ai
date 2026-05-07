@@ -36,6 +36,7 @@ import Overview from "./Overview";
 import PublicProfileView from "./PublicProfileView";
 import { JoinTeamView } from "./sections/JoinTeamView";
 import ComingSoon from "./pages/ComingSoon";
+import BuilderOnboarding from "./pages/BuilderOnboarding";
 import { useApp } from "@/state/AppContext";
 import type { Profile } from "@/types";
 import type { AuthSuccessData } from "@/components/AuthPage";
@@ -48,6 +49,8 @@ function App() {
   const [authOpen, setAuthOpen] = useState(false);
   const [authView, setAuthView] = useState<"signin" | "signup">("signup");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isOnboarding, setIsOnboarding] = useState(false);
+  const [onboardingUserId, setOnboardingUserId] = useState<string | null>(null);
   const [userRole, setUserRole] = useState<string | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
   const { state, dispatch } = useApp();
@@ -89,9 +92,10 @@ function App() {
           : data.role === "recruiter"
             ? "Recruiting"
             : "Technology";
+      const userId = `user_${Date.now()}`;
 
       const newProfile: Partial<Profile> = {
-        userId: `user_${Date.now()}`,
+        userId,
         role: mappedRole,
         fullName: data.name || "New User",
         username: data.email?.split("@")[0] || `user${Date.now()}`,
@@ -124,17 +128,27 @@ function App() {
       }
 
       dispatch({ type: "NEW_SIGNUP", payload: newProfile as Profile });
-    } else {
-      const builder = state.builders.find((b) => b.email === data.email);
-      const company = state.companies.find((c) => c.email === data.email);
 
-      if (builder) {
-        dispatch({ type: "LOGIN_USER", payload: builder });
-      } else if (company) {
-        dispatch({ type: "LOGIN_USER", payload: company });
+      if (mappedRole === "builder") {
+        setOnboardingUserId(userId);
+        setIsOnboarding(true);
       } else {
-        dispatch({ type: "SWITCH_USER", payload: "builder" });
+        setIsLoggedIn(true);
       }
+
+      setAuthOpen(false);
+      return;
+    }
+
+    const builder = state.builders.find((b) => b.email === data.email);
+    const company = state.companies.find((c) => c.email === data.email);
+
+    if (builder) {
+      dispatch({ type: "LOGIN_USER", payload: builder });
+    } else if (company) {
+      dispatch({ type: "LOGIN_USER", payload: company });
+    } else {
+      dispatch({ type: "SWITCH_USER", payload: "builder" });
     }
 
     setIsLoggedIn(true);
@@ -156,6 +170,25 @@ function App() {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
+
+  if (isOnboarding && onboardingUserId) {
+    return (
+      <BuilderOnboarding
+        userId={onboardingUserId}
+        userName={userName ?? undefined}
+        onBack={() => {
+          setIsOnboarding(false);
+          setOnboardingUserId(null);
+          setUserRole(null);
+          setUserName(null);
+        }}
+        onComplete={() => {
+          setIsOnboarding(false);
+          setIsLoggedIn(true);
+        }}
+      />
+    );
+  }
 
   if (isLoggedIn) {
     // If user signed up as builder, show overview. Otherwise show coming soon page
@@ -505,7 +538,7 @@ function App() {
                     <h2 className="text-xl md:text-3xl font-black text-white tracking-tight mb-8">
                       {t("solution.title")}
                     </h2>
-                    <p className="text-base md:text-xl text-slate-300 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-xl text-slate-300 font-light mb-12 max-w-3xl mx-auto leading-relaxed whitespace-pre-line">
                       {t("solution.desc")}
                     </p>
                     <div className="inline-block p-[2px] rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 shadow-[0_0_40px_rgba(99,102,241,0.4)] transform hover:scale-[1.02] transition-transform duration-500">

@@ -1,5 +1,5 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
 const resources = {
   en: {
@@ -11,7 +11,8 @@ const resources = {
       "nav.getStarted": "Get Started",
       "hero.title1": "The Operating System",
       "hero.title2": "for the Future of Work",
-      "hero.subtitle": "Build your Reputation, Join Projects, Find Teams and Access Funding - Powered by AI and a Decentralized Proof-of-Work System",
+      "hero.subtitle":
+        "Build your Reputation, Join Projects, Find Teams and Access Funding - Powered by AI and a Decentralized Proof-of-Work System",
       "hero.startBuilding": "Start Building",
       "hero.exploreTalent": "Explore Talent",
       "hero.tagline": "No more CVs, No more noise, just proof and growth",
@@ -24,44 +25,60 @@ const resources = {
       "problem.point3": "Opportunities go to the loudest, not the best",
       "solution.tag": "Solution",
       "solution.title": "Meet NOVA",
-      "solution.desc": "NOVA is a trust-based platform where opportunities chase you. There are no CVs, no job applications, and no interviews—your work speaks for you. Through a verified proof-of-work system, your skills, projects, and contributions are tracked and validated in real time. As you build, your reputation grows, turning everything you create into a powerful digital identity. NOVA connects this identity directly to jobs, teams, and investors, matching you with the right opportunities automatically. Instead of proving yourself repeatedly, your work becomes your proof, giving you continuous access to growth, collaboration, and funding in a system designed for the future of work.",
+      "solution.desc":
+        "NOVA is where your work becomes your identity—and opportunity comes to you.\n\nNo CVs. No applications. No gatekeepers.\n\nNOVA tracks and verifies everything you build in real time, turning your skills, projects, and contributions into a trusted, living reputation.\n\nPowered by AI, NOVA automatically matches you to:\n\nthe right opportunities\nthe right teams\nthe right investors\n\n—based on what you’ve proven, not what you claim.\n\nInside NOVA, you don’t just get discovered—you:\n\ncollaborate in real time\nbuild real projects\nlearn by execution\naccess funding based on performance\n\nEvery action compounds into a system that continuously works for you.\n\nYour work becomes your proof.\nYour proof becomes your identity.\nYour identity unlocks everything.\n\nNOVA is not a network.\nIt’s the operating system for builders.",
       "solution.highlight1": "No traditional interviews.",
       "solution.highlight2": "Your reputation speaks for you.",
       "flow.title": "Core Flow",
       "flow.subtitle": "Make it simple. Make it actionable.",
       "flow.step1.tag": "STEP 1",
       "flow.step1.title": "Build",
-      "flow.step1.desc": "Take tasks, projects, or challenges. Write code, design UI, solve problems.",
+      "flow.step1.desc":
+        "Take tasks, projects, or challenges. Write code, design UI, solve problems.",
       "flow.step2.tag": "STEP 2",
       "flow.step2.title": "Prove",
-      "flow.step2.desc": "Your work is verified by the network, evaluated for impact, and recorded immutably.",
+      "flow.step2.desc":
+        "Your work is verified by NOVA AI evaluated for impact, timestamped and recorded immutably.",
       "flow.step3.tag": "STEP 3",
       "flow.step3.title": "Grow",
-      "flow.step3.desc": "Gain trust, unparalleled visibility, and unlock high-quality economic opportunities.",
+      "flow.step3.desc":
+        "Gain trust, unparalleled visibility, and unlock high-quality economic opportunities.",
       "feat.title": "Built for Real Builders",
-      "feat.subtitle": "The tools you need to build trust and show your impact.",
+      "feat.subtitle":
+        "The tools you need to build trust and show your impact.",
       "feat.f1.title": "AI Matching",
-      "feat.f1.desc": "Connects talent to tasks with intelligent algorithms that match skills, experience, and project requirements.",
+      "feat.f1.desc":
+        "Connects talent to tasks with intelligent algorithms that match skills, experience, and project requirements.",
       "feat.f2.title": "Proof of Work",
-      "feat.f2.desc": "Replaces traditional CVs and resumes with a dynamic, verifiable record of real output—combining work history, skill validation, AI-powered skill graphs, and actual project contributions. Your work speaks for you, not a document. Every contribution is tracked, timestamped, and permanently recorded on-chain, then surfaced on your reputation overview that reflects your true capability, consistency, and execution power.",
+      "feat.f2.desc":
+        "Replaces traditional CVs and resumes with a dynamic, verifiable record of real output—combining work history, skill validation, AI-powered skill graphs, and actual project contributions. Your work speaks for you, not a document. Every contribution is tracked, timestamped, and permanently recorded on-chain, then surfaced on your reputation overview that reflects your true capability, consistency, and execution power.",
       "feat.global.title": "Global visibility",
-      "feat.global.desc": "Connect with verified builders on a global scale and build projects or startup",
+      "feat.global.desc":
+        "Connect with verified builders on a global scale and build projects or startup",
       "feat.f3.title": "Auto Team Formation",
-      "feat.f3.desc": "Builds optimal teams automatically by analyzing complementary skills, past collaboration success, and project needs.",
+      "feat.f3.desc":
+        "Builds optimal teams automatically by analyzing complementary skills, past collaboration success, and project needs.",
       "feat.f4.title": "Continuous Task Flow",
-      "feat.f4.desc": "Keeps builders active with a steady stream of opportunities, skill-building challenges, and meaningful projects.",
+      "feat.f4.desc":
+        "Keeps builders active with a steady stream of opportunities, skill-building challenges, and meaningful projects.",
       "feat.f5.title": "Built-in Funding",
-      "feat.f5.desc": "Connects projects directly to capital through integrated funding mechanisms, investor matching, and project monetization.",
-      "feat.f6.title": "Proof-Based Profiles",
-      "feat.f6.desc": "Your work speaks, not your CV. Every contribution is tracked, verified, and displayed as proof of your capability.",
+      "feat.f5.desc":
+        "Connects projects directly to capital through integrated funding mechanisms, investor matching, and project monetization.",
+      "feat.f6.title": "Reputation dashboard",
+      "feat.f6.desc":
+        "Your work speaks, not your CV or certificate. Every contribution is recorded timestamped, verified and displayed as proof of your capability.",
       "feat.f7.title": "Trust Score System",
-      "feat.f7.desc": "Reputation built on real output. Your score grows with high-quality deliveries, making you discoverable instantly.",
+      "feat.f7.desc":
+        "Reputation built on real output. Your score grows with high-quality deliveries, making you discoverable instantly.",
       "feat.f8.title": "Task & Project Engine",
-      "feat.f8.desc": "Constant opportunities to prove skill. Find meaningful challenges that match your expertise and push your boundaries.",
+      "feat.f8.desc":
+        "Constant opportunities to prove skill. Find meaningful challenges that match your expertise and push your boundaries.",
       "feat.f9.title": "Open Talent Network",
-      "feat.f9.desc": "Anyone can enter. Only proof survives. A borderless ecosystem replacing traditional gatekeepers with pure meritocracy.",
+      "feat.f9.desc":
+        "Anyone can enter. Only proof survives. A borderless ecosystem replacing traditional gatekeepers with pure meritocracy.",
       "mission.title": "Ending Idle Talent",
-      "mission.desc1": "Across Africa and the world, millions of skilled people are unseen.",
+      "mission.desc1":
+        "Across Africa and the world, millions of skilled people are unseen.",
       "mission.desc2": "NOVA activates them.",
       "mission.w1": "potential",
       "mission.w2": "execution",
@@ -84,11 +101,14 @@ const resources = {
       "proof.lbl3": "Verification Success Rate",
       "trust.title": "Trust, Built on Work",
       "trust.t1.title": "Verified Outputs",
-      "trust.t1.desc": "Every deliverable is scrutinized and permanently recorded.",
+      "trust.t1.desc":
+        "Every deliverable is scrutinized and permanently recorded.",
       "trust.t2.title": "Transparent Performance",
-      "trust.t2.desc": "No hidden metrics. Your impact is clear for all to see.",
+      "trust.t2.desc":
+        "No hidden metrics. Your impact is clear for all to see.",
       "trust.t3.title": "Merit-Based System",
-      "trust.t3.desc": "Success is determined by what you do, not who you know.",
+      "trust.t3.desc":
+        "Success is determined by what you do, not who you know.",
       "cta.title": "Start Proving Your Worth",
       "cta.desc1": "The future doesn't reward claims.",
       "cta.desc2": "It rewards proof.",
@@ -104,8 +124,8 @@ const resources = {
       "foot.c3": "LinkedIn",
       "foot.copy": "NOVA Talent. All rights reserved.",
       "foot.priv": "Privacy Policy",
-      "foot.terms": "Terms of Service"
-    }
+      "foot.terms": "Terms of Service",
+    },
   },
   es: {
     translation: {
@@ -116,7 +136,8 @@ const resources = {
       "nav.getStarted": "Empezar",
       "hero.title1": "El Sistema Operativo",
       "hero.title2": "para el Futuro del Trabajo",
-      "hero.subtitle": "Construye tu Reputación, Únete a Proyectos, Encuentra Equipos y Accede a Financiación - Impulsado por IA y un Sistema Descentralizado de Prueba de Trabajo",
+      "hero.subtitle":
+        "Construye tu Reputación, Únete a Proyectos, Encuentra Equipos y Accede a Financiación - Impulsado por IA y un Sistema Descentralizado de Prueba de Trabajo",
       "hero.startBuilding": "Empezar a Construir",
       "hero.exploreTalent": "Explorar Talento",
       "hero.tagline": "Sin CVs. Sin excusas. Solo prueba.",
@@ -126,33 +147,43 @@ const resources = {
       "problem.desc2": "NOVA funciona con pruebas.",
       "problem.point1": "La gente afirma tener habilidades que no puede probar",
       "problem.point2": "El verdadero talento está inactivo",
-      "problem.point3": "Las oportunidades van a los más ruidosos, no a los mejores",
+      "problem.point3":
+        "Las oportunidades van a los más ruidosos, no a los mejores",
       "solution.tag": "Solución",
       "solution.title": "Conoce a NOVA",
-      "solution.desc": "NOVA es un sistema donde el talento se verifica a través de ejecución real, no con palabras.",
+      "solution.desc":
+        "NOVA es un sistema donde el talento se verifica a través de ejecución real, no con palabras.",
       "solution.highlight1": "No dices lo que puedes hacer.",
       "solution.highlight2": "Lo demuestras.",
       "flow.title": "Flujo Principal",
       "flow.subtitle": "Hazlo simple. Hazlo accionable.",
       "flow.step1.tag": "PASO 1",
       "flow.step1.title": "Construir",
-      "flow.step1.desc": "Crea tareas, proyectos. Escribe código, diseña, resuelve.",
+      "flow.step1.desc":
+        "Crea tareas, proyectos. Escribe código, diseña, resuelve.",
       "flow.step2.tag": "PASO 2",
       "flow.step2.title": "Probar",
-      "flow.step2.desc": "Tu trabajo es verificado, evaluado y registrado inmutablemente.",
+      "flow.step2.desc":
+        "Tu trabajo es verificado, evaluado y registrado inmutablemente.",
       "flow.step3.tag": "PASO 3",
       "flow.step3.title": "Crecer",
-      "flow.step3.desc": "Gana confianza, visibilidad y oportunidades increíbles.",
+      "flow.step3.desc":
+        "Gana confianza, visibilidad y oportunidades increíbles.",
       "feat.title": "Hecho para Constructores Reales",
-      "feat.subtitle": "Las herramientas que necesitas para mostrar tu impacto.",
+      "feat.subtitle":
+        "Las herramientas que necesitas para mostrar tu impacto.",
       "feat.f1.title": "Perfiles de Prueba",
-      "feat.f1.desc": "Tu trabajo habla, no tu CV. Cada aporte es verificado y mostrado.",
+      "feat.f1.desc":
+        "Tu trabajo habla, no tu CV. Cada aporte es verificado y mostrado.",
       "feat.f2.title": "Sistema de Reputación",
-      "feat.f2.desc": "Tu reputación crece con entregas de calidad. Sé descubierto rápidamente.",
+      "feat.f2.desc":
+        "Tu reputación crece con entregas de calidad. Sé descubierto rápidamente.",
       "feat.f3.title": "Motor de Tareas",
-      "feat.f3.desc": "Oportunidades constantes. Entra y resuelve problemas interesantes.",
+      "feat.f3.desc":
+        "Oportunidades constantes. Entra y resuelve problemas interesantes.",
       "feat.f4.title": "Red de Talento Abierta",
-      "feat.f4.desc": "Cualquiera entra. Solo la prueba sobrevive. Meritocracia pura.",
+      "feat.f4.desc":
+        "Cualquiera entra. Solo la prueba sobrevive. Meritocracia pura.",
       "mission.title": "Terminando el Talento Inactivo",
       "mission.desc1": "Alrededor del mundo, hay millones olvidados.",
       "mission.desc2": "NOVA los activa.",
@@ -181,7 +212,8 @@ const resources = {
       "trust.t2.title": "Rendimiento Transparente",
       "trust.t2.desc": "Sin métricas ocultas. Tu impacto está a la vista.",
       "trust.t3.title": "Sistema Basado en Mérito",
-      "trust.t3.desc": "El éxito se logra con lo que haces, no a quien conoces.",
+      "trust.t3.desc":
+        "El éxito se logra con lo que haces, no a quien conoces.",
       "cta.title": "Empieza a Probar tu Valor",
       "cta.desc1": "El futuro no premia excusas.",
       "cta.desc2": "Premia pruebas.",
@@ -197,8 +229,8 @@ const resources = {
       "foot.c3": "LinkedIn",
       "foot.copy": "NOVA. Derechos Reservados.",
       "foot.priv": "Política de Privacidad",
-      "foot.terms": "Términos de Servicio"
-    }
+      "foot.terms": "Términos de Servicio",
+    },
   },
   fr: {
     translation: {
@@ -209,7 +241,8 @@ const resources = {
       "nav.getStarted": "Commencer",
       "hero.title1": "Le Système d'Exploitation",
       "hero.title2": "pour l'Avenir du Travail",
-      "hero.subtitle": "Construisez votre Réputation, Rejoignez des Projets, Trouvez des Équipes et Accédez au Financement - Propulsé par l'IA et un Système Décentralisé de Preuve de Travail",
+      "hero.subtitle":
+        "Construisez votre Réputation, Rejoignez des Projets, Trouvez des Équipes et Accédez au Financement - Propulsé par l'IA et un Système Décentralisé de Preuve de Travail",
       "hero.startBuilding": "Commencer",
       "hero.exploreTalent": "Explorer les Talents",
       "hero.tagline": "Fini les CVs. Rien que des preuves.",
@@ -290,8 +323,8 @@ const resources = {
       "foot.c3": "LinkedIn",
       "foot.copy": "NOVA 2025",
       "foot.priv": "Confidentialité",
-      "foot.terms": "Conditions"
-    }
+      "foot.terms": "Conditions",
+    },
   },
   pt: {
     translation: {
@@ -302,7 +335,8 @@ const resources = {
       "nav.getStarted": "Começar",
       "hero.title1": "O Sistema Operacional",
       "hero.title2": "para o Futuro do Trabalho",
-      "hero.subtitle": "Construa sua Reputação, Junte-se a Projetos, Encontre Equipes e Acesse Financiamento - Desenvolvido por IA e um Sistema Descentralizado de Prova de Trabalho",
+      "hero.subtitle":
+        "Construa sua Reputação, Junte-se a Projetos, Encontre Equipes e Acesse Financiamento - Desenvolvido por IA e um Sistema Descentralizado de Prova de Trabalho",
       "hero.startBuilding": "Começar Construção",
       "hero.exploreTalent": "Explorar Talentos",
       "hero.tagline": "Sem currículos. Apenas provas.",
@@ -383,8 +417,8 @@ const resources = {
       "foot.c3": "In",
       "foot.copy": "NOVA.",
       "foot.priv": "Privado",
-      "foot.terms": "Termos"
-    }
+      "foot.terms": "Termos",
+    },
   },
   de: {
     translation: {
@@ -395,7 +429,8 @@ const resources = {
       "nav.getStarted": "Loslegen",
       "hero.title1": "Das Betriebssystem",
       "hero.title2": "für die Zukunft der Arbeit",
-      "hero.subtitle": "Bauen Sie Ihre Reputation auf, Treten Sie Projekten bei, Finden Sie Teams und Erhalten Sie Finanzierung - Angetrieben durch KI und ein Dezentrales Proof-of-Work System",
+      "hero.subtitle":
+        "Bauen Sie Ihre Reputation auf, Treten Sie Projekten bei, Finden Sie Teams und Erhalten Sie Finanzierung - Angetrieben durch KI und ein Dezentrales Proof-of-Work System",
       "hero.startBuilding": "Starten",
       "hero.exploreTalent": "Talente Entdecken",
       "hero.tagline": "Keine CVs mehr. Nur Beweise.",
@@ -476,20 +511,18 @@ const resources = {
       "foot.c3": "LinkedIn",
       "foot.copy": "NOVA.",
       "foot.priv": "Privacy",
-      "foot.terms": "Terms"
-    }
-  }
+      "foot.terms": "Terms",
+    },
+  },
 };
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: "en",
-    fallbackLng: "en",
-    interpolation: {
-      escapeValue: false
-    }
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "en",
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18n;
