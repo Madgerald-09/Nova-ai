@@ -31,6 +31,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { SkeletonCard } from "@/components/ui/loading-skeleton";
 import AuthPage from "@/components/AuthPage";
 import Overview from "./Overview";
 import PublicProfileView from "./PublicProfileView";
@@ -256,22 +257,35 @@ function App() {
                     className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0a0a0a]"
                   >
                     <motion.div
-                      animate={{
-                        opacity: [0.3, 1, 0.3],
-                        scale: [0.95, 1.05, 0.95],
-                      }}
+                      animate={{ opacity: [0.3, 1, 0.3] }}
                       transition={{
                         duration: 1.2,
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                      className="relative flex items-center justify-center w-32 h-32 rounded-[2rem] overflow-hidden shadow-2xl shadow-indigo-500/20"
+                      className="relative w-full max-w-4xl p-6"
                     >
-                      <img
-                        src="/Picsart_26-04-10_14-37-41-214.png"
-                        alt="Loading NOVA..."
-                        className="w-full h-full object-contain bg-[#0a0a0a] p-2"
-                      />
+                      <div className="mx-auto max-w-2xl rounded-[2rem] overflow-hidden border border-white/10 bg-[#111827]/90 shadow-2xl shadow-indigo-500/20 p-6">
+                        <div className="flex items-center gap-4 mb-6">
+                          <div className="w-14 h-14 rounded-3xl bg-indigo-500/10 flex items-center justify-center">
+                            <img
+                              src="/Picsart_26-04-10_14-37-41-214.png"
+                              alt="Loading NOVA..."
+                              className="w-10 h-10 object-contain"
+                            />
+                          </div>
+                          <div>
+                            <p className="text-sm uppercase tracking-[0.35em] text-indigo-300/80">
+                              Loading NOVA
+                            </p>
+                            <p className="text-base text-slate-300">
+                              Preparing the experience for builders and
+                              creators.
+                            </p>
+                          </div>
+                        </div>
+                        <SkeletonCard count={2} columns={2} showAvatar />
+                      </div>
                     </motion.div>
                   </motion.div>
                 )}
