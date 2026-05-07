@@ -71,7 +71,7 @@ export function RoleSidebar() {
       )}
 
       <aside
-        className={`fixed left-0 top-0 z-50 h-full bg-[#0a0a0a] border-r border-white/5 flex flex-col transition-all duration-300 ${
+        className={`fixed left-0 top-0 z-50 h-full bg-[#0a0a0a] border-r border-white/5 flex flex-col transition-all duration-500 ease-out ${
           isMobile
             ? state.sidebarCollapsed
               ? "-translate-x-full"

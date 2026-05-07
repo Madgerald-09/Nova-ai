@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { useApp } from "@/state/AppContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { TopNav } from "@/components/TopNav";
@@ -97,14 +98,29 @@ export default function Overview() {
     return <BuilderOverview />;
   };
 
+  const contentKey = `${state.userRole}-${activeTab}`;
+
   return (
     <div className="min-h-screen bg-black text-[#f9fafb] flex">
       <RoleSidebar />
       <div
-        className={`flex-1 flex flex-col transition-all duration-300 ${getMarginLeft()}`}
+        className={`flex-1 flex flex-col transition-all duration-300 ease-out ${getMarginLeft()}`}
       >
         <TopNav />
-        <main className="flex-1 overflow-auto pt-16">{renderContent()}</main>
+        <main className="flex-1 overflow-auto pt-16">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={contentKey}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="h-full"
+            >
+              {renderContent()}
+            </motion.div>
+          </AnimatePresence>
+        </main>
       </div>
       {state.showNotifications && <NotificationPanel />}
       {state.showProfileEdit && <ProfileEditModal />}

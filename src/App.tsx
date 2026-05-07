@@ -166,20 +166,8 @@ function App() {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path="/profile/:userId" element={<PublicProfileView />} />
           <Route
-            path="/"
-            element={
-              <AuthPage
-                view={authView}
-                onClose={closeAuth}
-                onViewChange={setAuthView}
-                onSuccess={handleAuthSuccess}
-              />
-            }
-          />
-          <Route
-            path="/join"
+            path="*"
             element={
               <AuthPage
                 view={authView}
@@ -366,7 +354,7 @@ function App() {
                   >
                     <motion.h1
                       variants={fadeInUp}
-                      className="text-6xl md:text-8xl font-black tracking-tighter text-white mb-8 leading-[1.1]"
+                      className="text-2xl md:text-3xl font-black tracking-tighter text-white mb-8 leading-[1.1]"
                     >
                       {t("hero.title1")}{" "}
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-cyan-400">
@@ -378,7 +366,7 @@ function App() {
                       variants={fadeInUp}
                       className="flex flex-col items-center gap-4 mb-12"
                     >
-                      <p className="text-xl md:text-2xl text-slate-400 max-w-3xl leading-relaxed font-medium">
+                      <p className="text-base md:text-lg text-slate-400 max-w-3xl leading-relaxed font-medium">
                         {t("hero.subtitle")}
                       </p>
                     </motion.div>
@@ -425,7 +413,7 @@ function App() {
                       transition={{ duration: 0.8 }}
                       className="flex-1 space-y-8"
                     >
-                      <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-tight">
+                      <h2 className="text-xl md:text-3xl font-black text-white tracking-tight leading-tight">
                         {t("problem.title1")} <br />
                         <span
                           className="text-red-400 glitch-text drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]"
@@ -434,7 +422,7 @@ function App() {
                           {t("problem.title2")}
                         </span>
                       </h2>
-                      <p className="text-2xl font-light text-slate-400">
+                      <p className="text-xl font-light text-slate-400">
                         {t("problem.desc1")} <br />
                         <strong className="text-white font-bold">
                           {t("problem.desc2")}
@@ -463,7 +451,7 @@ function App() {
                               &times;
                             </span>
                           </div>
-                          <p className="text-xl font-medium text-slate-200">
+                          <p className="text-base font-medium text-slate-200">
                             {point}
                           </p>
                         </motion.div>
@@ -491,15 +479,15 @@ function App() {
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold text-indigo-300 mb-8">
                       <Zap className="h-4 w-4" /> {t("solution.tag")}
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-8">
+                    <h2 className="text-xl md:text-3xl font-black text-white tracking-tight mb-8">
                       {t("solution.title")}
                     </h2>
-                    <p className="text-xl md:text-2xl text-slate-300 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-xl text-slate-300 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
                       {t("solution.desc")}
                     </p>
                     <div className="inline-block p-[2px] rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 shadow-[0_0_40px_rgba(99,102,241,0.4)] transform hover:scale-[1.02] transition-transform duration-500">
                       <div className="bg-black px-8 py-6 md:px-12 md:py-8 rounded-[22px] backdrop-blur-xl">
-                        <p className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                        <p className="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
                           {t("solution.highlight1")}{" "}
                           <br className="hidden md:block" />
                           <span className="text-indigo-400">
@@ -523,10 +511,10 @@ function App() {
                       viewport={{ once: true }}
                       className="text-center mb-20"
                     >
-                      <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">
+                      <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-6">
                         {t("flow.title")}
                       </h2>
-                      <p className="text-xl text-slate-400 font-medium">
+                      <p className="text-base text-slate-400 font-medium">
                         {t("flow.subtitle")}
                       </p>
                     </motion.div>
@@ -550,7 +538,7 @@ function App() {
                         <div className="h-8 flex items-center justify-center px-4 rounded-full bg-white/10 text-sm font-bold text-slate-300 mb-6">
                           {t("flow.step1.tag")}
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">
+                        <h3 className="text-xl font-bold text-white mb-4">
                           {t("flow.step1.title")}
                         </h3>
                         <p className="text-slate-400 leading-relaxed">
@@ -568,7 +556,7 @@ function App() {
                         <div className="h-8 flex items-center justify-center px-4 rounded-full bg-white/10 text-sm font-bold text-slate-300 mb-6">
                           {t("flow.step2.tag")}
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">
+                        <h3 className="text-xl font-bold text-white mb-4">
                           {t("flow.step2.title")}
                         </h3>
                         <p className="text-slate-400 leading-relaxed">
@@ -586,7 +574,7 @@ function App() {
                         <div className="h-8 flex items-center justify-center px-4 rounded-full bg-white/10 text-sm font-bold text-slate-300 mb-6">
                           {t("flow.step3.tag")}
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">
+                        <h3 className="text-xl font-bold text-white mb-4">
                           {t("flow.step3.title")}
                         </h3>
                         <p className="text-slate-400 leading-relaxed">
@@ -600,7 +588,7 @@ function App() {
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: 0.6, duration: 0.8 }}
                       viewport={{ once: true }}
-                      className="mt-16 flex justify-center items-center gap-4 text-xl font-bold text-slate-400"
+                      className="mt-16 flex justify-center items-center gap-4 text-lg font-bold text-slate-400"
                     >
                       <span className="text-white">
                         {t("flow.step1.title")}
@@ -629,10 +617,10 @@ function App() {
                       viewport={{ once: true }}
                       className="text-center mb-20"
                     >
-                      <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">
+                      <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-6">
                         {t("feat.title")}
                       </h2>
-                      <p className="text-xl text-slate-400 mb-12">
+                      <p className="text-base text-slate-400 mb-12">
                         {t("feat.subtitle")}
                       </p>
                     </motion.div>
@@ -651,7 +639,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <Bot className="w-7 h-7 text-blue-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.f1.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -666,7 +654,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <FileText className="w-7 h-7 text-green-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.f2.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -681,7 +669,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <Search className="w-7 h-7 text-sky-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.global.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -696,7 +684,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <Users2 className="w-7 h-7 text-purple-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.f3.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -711,7 +699,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <WorkflowIcon className="w-7 h-7 text-orange-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.f4.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -726,7 +714,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <DollarSign className="w-7 h-7 text-yellow-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.f5.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -741,7 +729,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <CheckCircle2 className="w-7 h-7 text-indigo-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.f6.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -756,7 +744,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <BarChart className="w-7 h-7 text-cyan-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.f7.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -771,7 +759,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <FolderGit2 className="w-7 h-7 text-pink-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.f8.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -786,7 +774,7 @@ function App() {
                         <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
                           <Globe className="w-7 h-7 text-emerald-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">
+                        <h3 className="text-lg font-bold text-white mb-3">
                           {t("feat.f9.title")}
                         </h3>
                         <p className="text-base text-slate-400 leading-relaxed">
@@ -825,10 +813,10 @@ function App() {
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl mx-auto relative z-10"
                   >
-                    <h2 className="text-5xl md:text-7xl font-black text-white tracking-tight mb-10">
+                    <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-10">
                       {t("mission.title")}
                     </h2>
-                    <p className="text-2xl md:text-3xl text-slate-300 font-light leading-relaxed mb-12">
+                    <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed mb-12">
                       {t("mission.desc1")}
                       <br />
                       <strong className="text-white font-bold">
@@ -836,15 +824,15 @@ function App() {
                       </strong>
                     </p>
                     <div className="inline-flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-8 py-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors">
-                      <span className="text-xl text-slate-400">
+                      <span className="text-base text-slate-400">
                         {t("mission.w1")}
                       </span>
                       <ArrowRight className="w-5 h-5 text-indigo-400 hidden md:block" />
-                      <span className="text-xl text-slate-200 font-semibold">
+                      <span className="text-base text-slate-200 font-semibold">
                         {t("mission.w2")}
                       </span>
                       <ArrowRight className="w-5 h-5 text-cyan-400 hidden md:block" />
-                      <span className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-300 font-bold">
+                      <span className="text-base text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-300 font-bold">
                         {t("mission.w3")}
                       </span>
                     </div>
@@ -866,7 +854,7 @@ function App() {
                         className="p-12 rounded-[2.5rem] bg-indigo-950/20 border border-indigo-900/30"
                       >
                         <Users className="w-12 h-12 text-indigo-400 mb-8" />
-                        <h3 className="text-3xl font-bold text-white mb-6">
+                        <h3 className="text-2xl font-bold text-white mb-6">
                           {t("users.b.title")}
                         </h3>
                         <ul className="space-y-4">
@@ -890,7 +878,7 @@ function App() {
                         className="p-12 rounded-[2.5rem] bg-cyan-950/20 border border-cyan-900/30"
                       >
                         <Building2 className="w-12 h-12 text-cyan-400 mb-8" />
-                        <h3 className="text-3xl font-bold text-white mb-6">
+                        <h3 className="text-2xl font-bold text-white mb-6">
                           {t("users.c.title")}
                         </h3>
                         <ul className="space-y-4">
@@ -914,7 +902,7 @@ function App() {
                         className="p-12 rounded-[2.5rem] bg-emerald-950/20 border border-emerald-900/30"
                       >
                         <Activity className="w-12 h-12 text-emerald-400 mb-8" />
-                        <h3 className="text-3xl font-bold text-white mb-6">
+                        <h3 className="text-2xl font-bold text-white mb-6">
                           {t("users.e.title")}
                         </h3>
                         <ul className="space-y-4">
@@ -943,7 +931,7 @@ function App() {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      className="text-3xl md:text-4xl font-bold text-white mb-16 tracking-tight"
+                      className="text-2xl md:text-3xl font-bold text-white mb-16 tracking-tight"
                     >
                       {t("proof.title")}
                     </motion.h2>
@@ -959,7 +947,7 @@ function App() {
                         variants={fadeInUp}
                         className="flex flex-col items-center pt-8 md:pt-0"
                       >
-                        <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-indigo-400 mb-4">
+                        <div className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-indigo-400 mb-4">
                           {t("proof.stat1Num", "10k+")}
                         </div>
                         <div className="text-lg font-medium text-slate-400">
@@ -970,7 +958,7 @@ function App() {
                         variants={fadeInUp}
                         className="flex flex-col items-center pt-8 md:pt-0"
                       >
-                        <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-cyan-400 mb-4">
+                        <div className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-cyan-400 mb-4">
                           {t("proof.stat2Num", "5k+")}
                         </div>
                         <div className="text-lg font-medium text-slate-400">
@@ -981,7 +969,7 @@ function App() {
                         variants={fadeInUp}
                         className="flex flex-col items-center pt-8 md:pt-0"
                       >
-                        <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-emerald-400 mb-4">
+                        <div className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-emerald-400 mb-4">
                           {t("proof.stat3Num", "96%")}
                         </div>
                         <div className="text-lg font-medium text-slate-400">
@@ -1002,7 +990,7 @@ function App() {
                     className="max-w-4xl mx-auto text-center bg-[#141414] p-12 md:p-20 rounded-[3rem] border border-white/5 shadow-2xl hover:shadow-indigo-500/10 transition-shadow duration-500"
                   >
                     <ShieldCheck className="w-16 h-16 text-indigo-500 mx-auto mb-8" />
-                    <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-10">
+                    <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-10">
                       {t("trust.title")}
                     </h2>
                     <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 text-left">
@@ -1057,7 +1045,7 @@ function App() {
                     transition={{ duration: 0.8 }}
                     className="relative z-10 max-w-3xl"
                   >
-                    <h2 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-tight mb-8">
+                    <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight mb-8">
                       {t("cta.title")}
                     </h2>
                     <p className="text-2xl text-indigo-200 font-light mb-12">

@@ -73,9 +73,11 @@
   html {
     overflow-x: hidden;
     min-height: 100%;
+    font-size: 13px;
   }
 
   body {
+    font-size: 0.88rem;
     @apply bg-background text-foreground;
     min-height: 100%;
     width: 100%;

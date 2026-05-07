@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -105,6 +105,20 @@ export default function AuthPage({
     },
   });
 
+  // Reset form and loading state when view changes
+  useEffect(() => {
+    setIsLoading(false);
+    setShowPassword(false);
+    setShowConfirmPassword(false);
+    setTermsAccepted(false);
+
+    if (view === "signin") {
+      signInForm.reset();
+    } else {
+      signUpForm.reset();
+    }
+  }, [view]);
+
   const onSignInSubmit = async (data: SignInFormData) => {
     setIsLoading(true);
     try {
@@ -180,7 +194,7 @@ export default function AuthPage({
         {/* Form Container */}
         <div className="rounded-3xl border border-white/10 bg-[#0f0f11]/50 backdrop-blur-sm p-8 shadow-xl shadow-indigo-500/10">
           {view === "signin" ? (
-            <Form {...signInForm}>
+            <Form key={view} {...signInForm}>
               <form
                 onSubmit={signInForm.handleSubmit(onSignInSubmit)}
                 className="space-y-6"
@@ -197,7 +211,7 @@ export default function AuthPage({
                         <Input
                           type="email"
                           placeholder="your@email.com"
-                          className="bg-white/5 border-white/10 text-foreground placeholder:text-slate-500"
+                          className="bg-white/5 border-white/10 text-white placeholder:text-slate-500"
                           {...field}
                           disabled={isLoading}
                         />
@@ -218,7 +232,7 @@ export default function AuthPage({
                           <Input
                             type={showPassword ? "text" : "password"}
                             placeholder="••••••••"
-                            className="bg-white/5 border-white/10 text-foreground placeholder:text-slate-500 pr-10"
+                            className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 pr-10"
                             {...field}
                             disabled={isLoading}
                           />
@@ -303,7 +317,7 @@ export default function AuthPage({
               </form>
             </Form>
           ) : (
-            <Form {...signUpForm}>
+            <Form key={view} {...signUpForm}>
               <form
                 onSubmit={signUpForm.handleSubmit(onSignUpSubmit)}
                 className="space-y-6"
@@ -320,7 +334,7 @@ export default function AuthPage({
                         <Input
                           type="text"
                           placeholder="John Doe"
-                          className="bg-white/5 border-white/10 text-foreground placeholder:text-slate-500"
+                          className="bg-white/5 border-white/10 text-white placeholder:text-slate-500"
                           {...field}
                           disabled={isLoading}
                         />
@@ -342,7 +356,7 @@ export default function AuthPage({
                         <Input
                           type="email"
                           placeholder="your@email.com"
-                          className="bg-white/5 border-white/10 text-foreground placeholder:text-slate-500"
+                          className="bg-white/5 border-white/10 text-white placeholder:text-slate-500"
                           {...field}
                           disabled={isLoading}
                         />
@@ -367,7 +381,7 @@ export default function AuthPage({
                         <Input
                           type="tel"
                           placeholder="+1 (555) 000-0000"
-                          className="bg-white/5 border-white/10 text-foreground placeholder:text-slate-500"
+                          className="bg-white/5 border-white/10 text-white placeholder:text-slate-500"
                           {...field}
                           disabled={isLoading}
                         />
@@ -441,7 +455,7 @@ export default function AuthPage({
                           <Input
                             type={showPassword ? "text" : "password"}
                             placeholder="••••••••"
-                            className="bg-white/5 border-white/10 text-foreground placeholder:text-slate-500 pr-10"
+                            className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 pr-10"
                             {...field}
                             disabled={isLoading}
                           />
@@ -477,7 +491,7 @@ export default function AuthPage({
                           <Input
                             type={showConfirmPassword ? "text" : "password"}
                             placeholder="••••••••"
-                            className="bg-white/5 border-white/10 text-foreground placeholder:text-slate-500 pr-10"
+                            className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 pr-10"
                             {...field}
                             disabled={isLoading}
                           />
