@@ -35,6 +35,7 @@ import AuthPage from "@/components/AuthPage";
 import Overview from "./Overview";
 import PublicProfileView from "./PublicProfileView";
 import { JoinTeamView } from "./sections/JoinTeamView";
+import ComingSoon from "./pages/ComingSoon";
 import { useApp } from "@/state/AppContext";
 import type { Profile } from "@/types";
 import type { AuthSuccessData } from "@/components/AuthPage";
@@ -47,6 +48,8 @@ function App() {
   const [authOpen, setAuthOpen] = useState(false);
   const [authView, setAuthView] = useState<"signin" | "signup">("signup");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState<string | null>(null);
+  const [userName, setUserName] = useState<string | null>(null);
   const { state, dispatch } = useApp();
 
   useEffect(() => {
@@ -71,6 +74,10 @@ function App() {
 
   const handleAuthSuccess = (data: AuthSuccessData) => {
     if (data.type === "signup") {
+      // Store the original role and user name
+      setUserRole(data.role);
+      setUserName(data.name || "User");
+
       const mappedRole = ["investor", "founder", "recruiter"].includes(
         data.role,
       )
@@ -151,15 +158,31 @@ function App() {
   };
 
   if (isLoggedIn) {
-    return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/profile/:userId" element={<PublicProfileView />} />
-          <Route path="/" element={<Overview />} />
-          <Route path="/join" element={<JoinTeamView />} />
-        </Routes>
-      </BrowserRouter>
-    );
+    // If user signed up as builder, show overview. Otherwise show coming soon page
+    if (userRole === "builder") {
+      return (
+        <BrowserRouter>
+          <Routes>
+            <Route path="/profile/:userId" element={<PublicProfileView />} />
+            <Route path="/" element={<Overview />} />
+            <Route path="/join" element={<JoinTeamView />} />
+          </Routes>
+        </BrowserRouter>
+      );
+    } else {
+      // Show coming soon page for other roles
+      return (
+        <ComingSoon
+          role={userRole || "user"}
+          userName={userName || undefined}
+          onBack={() => {
+            setIsLoggedIn(false);
+            setUserRole(null);
+            setUserName(null);
+          }}
+        />
+      );
+    }
   }
 
   if (authOpen) {
