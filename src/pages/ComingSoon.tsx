@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowLeft, Rocket, AlertCircle } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 interface ComingSoonProps {
   role: string;
@@ -15,9 +14,6 @@ export default function ComingSoon({
   userName,
   onBack,
 }: ComingSoonProps) {
-  const { t } = useTranslation();
-  const [isLeaving, setIsLeaving] = useState(false);
-
   const getRoleInfo = (role: string) => {
     const roleMap: Record<
       string,
@@ -61,10 +57,7 @@ export default function ComingSoon({
   const roleInfo = getRoleInfo(role);
 
   const handleBack = () => {
-    setIsLeaving(true);
-    setTimeout(() => {
-      onBack?.();
-    }, 500);
+    onBack?.();
   };
 
   return (

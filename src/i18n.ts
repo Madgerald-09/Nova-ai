@@ -49,9 +49,9 @@ const resources = {
       "feat.f1.title": "AI Matching",
       "feat.f1.desc":
         "Connects talent to tasks with intelligent algorithms that match skills, experience, and project requirements.",
-      "feat.f2.title": "Proof of Work",
+      "feat.f2.title": "Reputation dashboard",
       "feat.f2.desc":
-        "Replaces traditional CVs and resumes with a dynamic, verifiable record of real output—combining work history, skill validation, AI-powered skill graphs, and actual project contributions. Your work speaks for you, not a document. Every contribution is tracked, timestamped, and permanently recorded on-chain, then surfaced on your reputation overview that reflects your true capability, consistency, and execution power.",
+        "Your work speaks, not your CV or certificate. Every contribution is recorded timestamped, verified and displayed as proof of your capability.",
       "feat.global.title": "Global visibility",
       "feat.global.desc":
         "Connect with verified builders on a global scale and build projects or startup",
@@ -64,9 +64,9 @@ const resources = {
       "feat.f5.title": "Built-in Funding",
       "feat.f5.desc":
         "Connects projects directly to capital through integrated funding mechanisms, investor matching, and project monetization.",
-      "feat.f6.title": "Reputation dashboard",
+      "feat.f6.title": "Built-in Capital Infrastructure",
       "feat.f6.desc":
-        "Your work speaks, not your CV or certificate. Every contribution is recorded timestamped, verified and displayed as proof of your capability.",
+        "Connects projects intelligently to capital through decentralized funding, global investor matching, and automated project monetization.",
       "feat.f7.title": "Trust Score System",
       "feat.f7.desc":
         "Reputation built on real output. Your score grows with high-quality deliveries, making you discoverable instantly.",
@@ -175,9 +175,9 @@ const resources = {
       "feat.f1.title": "Perfiles de Prueba",
       "feat.f1.desc":
         "Tu trabajo habla, no tu CV. Cada aporte es verificado y mostrado.",
-      "feat.f2.title": "Sistema de Reputación",
+      "feat.f2.title": "Panel de Reputación",
       "feat.f2.desc":
-        "Tu reputación crece con entregas de calidad. Sé descubierto rápidamente.",
+        "Tu trabajo habla, no tu CV o certificado. Cada aporte es registrado, timestamped, verificado y mostrado como prueba de tu capacidad.",
       "feat.f3.title": "Motor de Tareas",
       "feat.f3.desc":
         "Oportunidades constantes. Entra y resuelve problemas interesantes.",
@@ -273,8 +273,9 @@ const resources = {
       "feat.subtitle": "L'outil qu'il vous faut.",
       "feat.f1.title": "Profils Prouvés",
       "feat.f1.desc": "Vos résultats comptent plus que le CV.",
-      "feat.f2.title": "Système de Score",
-      "feat.f2.desc": "Votre score augmente en travaillant bien.",
+      "feat.f2.title": "Tableau de Bord Réputation",
+      "feat.f2.desc":
+        "Votre travail parle, pas votre CV ou certificat. Chaque contribution est enregistrée, horodatée, vérifiée et affichée comme preuve de votre capacité.",
       "feat.f3.title": "Moteur de Projets",
       "feat.f3.desc": "Trouvez de nouveaux défis.",
       "feat.f4.title": "Réseau Ouvert",
@@ -367,8 +368,9 @@ const resources = {
       "feat.subtitle": "Para verdadeiros criadores.",
       "feat.f1.title": "Perfil Provado",
       "feat.f1.desc": "Sem currículo.",
-      "feat.f2.title": "Reputação",
-      "feat.f2.desc": "Sistema justo.",
+      "feat.f2.title": "Painel de Reputação",
+      "feat.f2.desc":
+        "Seu trabalho fala por você, não seu CV ou certificado. Cada contribuição é registrada, com timestamp, verificada e exibida como prova de sua capacidade.",
       "feat.f3.title": "Projetos",
       "feat.f3.desc": "Muitas tarefas disponíveis.",
       "feat.f4.title": "Rede Aberta",
@@ -461,8 +463,9 @@ const resources = {
       "feat.subtitle": "Für Sie.",
       "feat.f1.title": "Profil",
       "feat.f1.desc": "Ihre Leistung.",
-      "feat.f2.title": "Score",
-      "feat.f2.desc": "Ihr Wert.",
+      "feat.f2.title": "Reputation Dashboard",
+      "feat.f2.desc":
+        "Ihre Arbeit spricht, nicht Ihr Lebenslauf oder Zertifikat. Jeder Beitrag wird aufgezeichnet, zeitgestempelt, überprüft und als Nachweis Ihrer Fähigkeit angezeigt.",
       "feat.f3.title": "Aufgaben",
       "feat.f3.desc": "Immer da.",
       "feat.f4.title": "Netzwerk",

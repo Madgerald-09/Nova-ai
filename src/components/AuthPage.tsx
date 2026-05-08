@@ -105,19 +105,14 @@ export default function AuthPage({
     },
   });
 
-  // Reset form and loading state when view changes
+  // Reset form state when the auth view changes
   useEffect(() => {
-    setIsLoading(false);
-    setShowPassword(false);
-    setShowConfirmPassword(false);
-    setTermsAccepted(false);
-
     if (view === "signin") {
       signInForm.reset();
     } else {
       signUpForm.reset();
     }
-  }, [view]);
+  }, [view, signInForm, signUpForm]);
 
   const onSignInSubmit = async (data: SignInFormData) => {
     setIsLoading(true);

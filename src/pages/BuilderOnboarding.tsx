@@ -252,9 +252,9 @@ export default function BuilderOnboarding({
                   Experience level
                 </label>
                 <Select
-                  onValueChange={(value) =>
-                    form.setValue("experienceLevel", value as any)
-                  }
+                  onValueChange={(
+                    value: "beginner" | "intermediate" | "advanced",
+                  ) => form.setValue("experienceLevel", value)}
                   defaultValue={form.getValues("experienceLevel")}
                 >
                   <SelectTrigger className="mt-2 bg-white/5 border-white/10 text-white">
@@ -276,8 +276,8 @@ export default function BuilderOnboarding({
                   Availability
                 </label>
                 <Select
-                  onValueChange={(value) =>
-                    form.setValue("availabilityStatus", value as any)
+                  onValueChange={(value: "available" | "busy") =>
+                    form.setValue("availabilityStatus", value)
                   }
                   defaultValue={form.getValues("availabilityStatus")}
                 >
