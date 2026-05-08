@@ -504,28 +504,79 @@ function App() {
                       initial="hidden"
                       whileInView="show"
                       viewport={{ once: true, margin: "-100px" }}
-                      className="flex-1 space-y-6"
+                      className="flex-1 grid gap-6 sm:grid-cols-2"
                     >
                       {[
-                        t("problem.point1"),
-                        t("problem.point2"),
-                        t("problem.point3"),
-                      ].map((point, index) => (
+                        {
+                          title: t("problem.point1.title"),
+                          desc: t("problem.point1.desc"),
+                        },
+                        {
+                          title: t("problem.point2.title"),
+                          desc: t("problem.point2.desc"),
+                        },
+                        {
+                          title: t("problem.point3.title"),
+                          desc: t("problem.point3.desc"),
+                        },
+                        {
+                          title: t("problem.point4.title"),
+                          desc: t("problem.point4.desc"),
+                        },
+                        {
+                          title: t("problem.point5.title"),
+                          desc: t("problem.point5.desc"),
+                        },
+                        {
+                          title: t("problem.point6.title"),
+                          desc: t("problem.point6.desc"),
+                        },
+                        {
+                          title: t("problem.point7.title"),
+                          desc: t("problem.point7.desc"),
+                        },
+                        {
+                          title: t("problem.point8.title"),
+                          desc: t("problem.point8.desc"),
+                        },
+                      ].map((item, index) => (
                         <motion.div
                           key={index}
                           variants={fadeInUp}
-                          className="flex items-start gap-4 p-6 bg-black/50 border border-white/5 rounded-2xl"
+                          className="flex flex-col gap-3 p-6 bg-black/50 border border-white/5 rounded-2xl"
                         >
-                          <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-1">
-                            <span className="text-red-400 font-bold">
-                              &times;
-                            </span>
+                          <div className="flex items-start gap-4">
+                            <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-1">
+                              <span className="text-red-400 font-bold">
+                                &times;
+                              </span>
+                            </div>
+                            <p className="text-base font-semibold text-white">
+                              {item.title}
+                            </p>
                           </div>
-                          <p className="text-base font-medium text-slate-200">
-                            {point}
+                          <p className="text-sm leading-6 text-slate-300">
+                            {item.desc}
                           </p>
                         </motion.div>
                       ))}
+
+                      <motion.div
+                        variants={fadeInUp}
+                        className="flex items-start gap-4 p-6 bg-black/50 border border-white/5 rounded-2xl"
+                      >
+                        <div className="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center shrink-0 mt-1">
+                          <span className="text-amber-400 font-bold">🎯</span>
+                        </div>
+                        <div>
+                          <p className="text-base font-semibold text-white">
+                            {t("problem.close.title")}
+                          </p>
+                          <p className="mt-2 text-sm leading-6 text-slate-300">
+                            {t("problem.close.desc")}
+                          </p>
+                        </div>
+                      </motion.div>
                     </motion.div>
                   </div>
                 </section>

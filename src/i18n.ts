@@ -20,9 +20,34 @@ const resources = {
       "problem.title2": "Broken",
       "problem.desc1": "The world runs on claims.",
       "problem.desc2": "NOVA runs on proof.",
-      "problem.point1": "People claim skills they can't prove",
-      "problem.point2": "True talent stays idle",
-      "problem.point3": "Opportunities go to the loudest, not the best",
+      "problem.point1.title": "People claim skills they can't prove",
+      "problem.point1.desc":
+        "CVs are optimized. Profiles are polished. But real capability remains uncertain.",
+      "problem.point2.title": "You keep proving yourself from scratch",
+      "problem.point2.desc":
+        "Every application resets your value—no matter what you’ve already built.",
+      "problem.point3.title": "True talent stays invisible",
+      "problem.point3.desc":
+        "If you’re not loud, connected, or privileged, you don’t get seen.",
+      "problem.point4.title": "Opportunities are filtered by gatekeepers",
+      "problem.point4.desc":
+        "Before your work is even considered, it passes through layers of HR screening and bias.",
+      "problem.point5.title": "The system cannot handle the scale of talent",
+      "problem.point5.desc":
+        "One role attracts hundreds of applicants. Human screening is slow, limited, and inconsistent.",
+      "problem.point6.title": "Most talent is ignored, not rejected",
+      "problem.point6.desc":
+        "For every 1 person selected, dozens—or hundreds—are never truly evaluated.",
+      "problem.point7.title": "Hiring is guesswork",
+      "problem.point7.desc":
+        "Decisions are made on keywords, credentials, and impressions—not verified execution.",
+      "problem.point8.title":
+        "Opportunity is stressful, uncertain, and inefficient",
+      "problem.point8.desc":
+        "People spend months applying, waiting, and hoping—instead of building, contributing, and growing.",
+      "problem.close.title": "Closing Strike",
+      "problem.close.desc":
+        "This isn’t a talent problem. It’s a trust and infrastructure problem.",
       "solution.tag": "Solution",
       "solution.title": "Meet NOVA",
       "solution.desc":
