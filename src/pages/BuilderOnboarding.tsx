@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
@@ -30,8 +30,8 @@ const onboardingSchema = z.object({
   experienceLevel: z.enum(["beginner", "intermediate", "advanced"]),
   portfolioLinks: z.string().optional(),
   availabilityStatus: z.enum(["available", "busy"]),
-  hoursPerWeek: z
-    .number({ invalid_type_error: "Enter how many hours you can commit" })
+  hoursPerWeek: z.coerce
+    .number()
     .min(1, "At least 1 hour per week")
     .max(168, "Enter a valid number"),
 });
@@ -51,7 +51,7 @@ export default function BuilderOnboarding({
   );
 
   const form = useForm<OnboardingFormData>({
-    resolver: zodResolver(onboardingSchema),
+    resolver: zodResolver(onboardingSchema) as any,
     defaultValues: {
       displayName: builder?.fullName ?? userName ?? "",
       bio: builder?.bio ?? "",
@@ -102,7 +102,7 @@ export default function BuilderOnboarding({
     setAvatarPreview(url);
   };
 
-  const onSubmit = (values: OnboardingFormData) => {
+  const onSubmit: SubmitHandler<OnboardingFormData> = (values) => {
     const updatedBuilder: BuilderProfile = {
       ...builder,
       fullName: values.displayName,
